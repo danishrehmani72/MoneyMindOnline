@@ -28,6 +28,8 @@ import DashboardCard from './components/DashboardCard';
 import ReferralHistory from './components/ReferralHistory';
 import AdminPanel from './components/AdminPanel';
 import RecentWithdrawalToast, { RecentWithdrawalRecord } from './components/RecentWithdrawalToast';
+import { LanguageSwitcher } from './components/LanguageSwitcher';
+import { useTranslation } from './contexts/LanguageContext';
 import { motion, AnimatePresence } from 'motion/react';
 import { AvatarIcon, getAvatarConfig } from './lib/avatars';
 import earnhubLogo from './assets/images/earnhub_logo_1780161493423.png';
@@ -143,6 +145,7 @@ function CountUpNum({ value, duration = 1500, suffix = "" }: { value: number; du
 
 
 export default function App() {
+  const { t } = useTranslation();
   const [loading, setLoading] = useState(true);
   const [isUnblocking, setIsUnblocking] = useState(false);
   const [currentUid, setCurrentUid] = useState<string | null>(null);
